@@ -1,7 +1,7 @@
 export default {
     name: 'hidetag',
     description: 'Reenvía un mensaje citado a todos los participantes del grupo',
-    comand: ['hidetag', 'tagall', 'todos'],
+    comand: ['hidetag', 'tagall', 'todos', 'mensaje'],
     isQuoted: true,
     exec: async (m, { sock }) => {
         await sock.sendMessage(m.from, {
