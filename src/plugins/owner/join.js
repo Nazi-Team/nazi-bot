@@ -4,7 +4,7 @@ export default {
     description: 'Unirse a un grupo mediante un enlace de invitación',
     comand: ['join', 'unirse'],
     isOwner: true,
-    exec: async (m, { sock }) => {
+    exec: async (m, { sock, store }) => {
         const code = m.args.join(" ").split("chat.whatsapp.com/")[1];
         const data = await sock.groupGetInviteInfo(code);
 
