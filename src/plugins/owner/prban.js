@@ -4,7 +4,7 @@ export default {
     name: "Fraud Ip",
     description: "Banear una IP fraudulenta",
     params: ["ip"],
-    command: ["prban"],
+    comand: ["prban"],
     async execute(client, message, args) {
         const ip = args[0];
         const loadingMessages = [
