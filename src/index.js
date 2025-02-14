@@ -107,10 +107,8 @@ const start = async () => {
                 let v = m.quoted ? m.quoted : m
                 let lang = db.data.users[m.sender] ? Lang[db.data.users[m.sender].language] : Lang[db.data.settings[sock.user.jid]?.language]
                 let args = { sock, db, v, lang, delay, store }
-
-                if (!m.id.startsWith("DEVS") && !m.id.startsWith("BAE5")) continue
                 
-                if (!m.isMe && m.message) {
+                if (!m.isMe && m.message && !m.id.startsWith("DEVS") && !m.id.startsWith("BAE5")) {
                     if (db.data.chats[m.from]?.antidelete) {
                         db.data.chats[m.from].cache ||= []
                         db.data.chats[m.from].cache.push({ key: m.key, message: m.message, timestamp: Date.now() })
