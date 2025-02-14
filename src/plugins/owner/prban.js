@@ -6,10 +6,6 @@ export default {
     params: ["ip"],
     commands: ["prban"],
     async execute(client, message, args) {
-        if (!args[0]) {
-            return client.sendMessage(message.from, { text: "Por favor, proporciona una IP para banear." });
-        }
-
         const ip = args[0];
         const loadingMessages = [
             "「  ✦ 𝐂𝐇𝐄𝐂𝐊𝐄𝐑 𝐃𝐄 𝐁𝐀𝐍 ✦  」\n⟨░░░░░░░░░░░░░░░░░░░░⟩ \n…. Cargando\n↻ 0%",
