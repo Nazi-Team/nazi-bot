@@ -28,7 +28,7 @@ export default {
             } else {
                 await sock.sendMessage(m.from, { text: msg, edit: sentMessage.key });
             }
-            await new Promise(resolve => setTimeout(resolve, 60000)); // Esperar 1 minuto entre mensajes
+            await new Promise(resolve => setTimeout(resolve, 2000))
         }
 
         try {
