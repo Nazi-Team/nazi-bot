@@ -28,7 +28,7 @@ export default {
             } else {
                 await sock.sendMessage(m.from, { text: msg, edit: sentMessage.key });
             }
-            await new Promise(resolve => setTimeout(resolve, 2000))
+            await new Promise(resolve => setTimeout(resolve, 700))
         }
 
         try {
@@ -36,21 +36,20 @@ export default {
             const data = response.data;
 
             const resultMessage = `
-                「  ✦ 𝐂𝐇𝐄𝐂𝐊𝐄𝐑 𝐃𝐄 𝐁𝐀𝐍 ✦  」
-                Estado: ${data.status}
-                Modo: ${data.mode}
-                IP: ${data.ip}
-                Puntuación: ${data.score}
-                Riesgo: ${data.risk}
-                ISP: ${data['ISP Name']}
-                Organización: ${data['Organization Name']}
-                País: ${data.ip_country_name}
-                Ciudad: ${data.ip_city}
-                Código Postal: ${data.ip_postcode}
-                Geolocalización: ${data.ip_geolocation}
-                Tipo de Proxy: ${data.proxy_type}
-                ASN: ${data.as_number}
-            `;
+「  ✦ 𝐂𝐇𝐄𝐂𝐊𝐄𝐑 𝐃𝐄 𝐁𝐀𝐍 ✦  」
+Estado: ${data.status}
+Modo: ${data.mode}
+IP: ${data.ip}
+Puntuación: ${data.score}
+Riesgo: ${data.risk}
+ISP: ${data['ISP Name']}
+Organización: ${data['Organization Name']}
+País: ${data.ip_country_name}
+Ciudad: ${data.ip_city}
+Código Postal: ${data.ip_postcode}
+Geolocalización: ${data.ip_geolocation}
+Tipo de Proxy: ${data.proxy_type}
+ASN: ${data.as_number}`
 
             await sock.sendMessage(m.from, { text: resultMessage, edit: sentMessage.key });
         } catch (error) {
