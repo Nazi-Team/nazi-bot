@@ -20,7 +20,7 @@ export default {
     name: "Analizador IP",
     description: "Verificación de IP fraudulenta",
     params: ["ip"],
-    command: ["prban"],
+    comand: ["prban"],
     exec: async (m, { sock }) => {
         const ip = m.args[0];
         let msgKey;
