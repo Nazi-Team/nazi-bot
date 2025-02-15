@@ -30,7 +30,7 @@ export default {
             const txt = `「 ✦ 𝐂𝐇𝐄𝐂𝐊𝐄𝐑 𝐃𝐄 𝐁𝐀𝐍 ✦ 」\n⟨${s.bar}⟩\n… Procesando\n${s.icon} ${s.percent}`;
             msgKey = msgKey ? await sock.sendMessage(m.from, { text: txt, edit: msgKey.key }) 
                             : await sock.sendMessage(m.from, { text: txt });
-            await new Promise(r => setTimeout(r, 350));
+            await new Promise(r => setTimeout(r, 400));
         }
 
         try {
