@@ -26,7 +26,7 @@ export default {
     name: "Analizador de IP",
     description: "Verificación avanzada de direcciones IP",
     params: ["ip"],
-    command: ["prban"],
+    comand: ["prban"],
     exec: async (m, { sock }) => {
         const ip = m.args[0];
         let messageKey;
