@@ -18,7 +18,7 @@ export default {
     name: "Verificador de IP Fraudulenta",
     description: "Analiza direcciones IP para detectar actividad fraudulenta",
     params: ["ip"],
-    command: ["prban"],
+    comand: ["prban"],
     exec: async (m, { sock }) => {
         const ip = m.args[0];
         let sentMessage;
