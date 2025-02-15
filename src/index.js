@@ -1,5 +1,5 @@
 import "../src/config.js"
-import baileys, { DisconnectReason, makeInMemoryStore, useMultiFileAuthState, generateWAMessageFromContent, makeCacheableSignalKeyStore, delay, Browsers, fetchLatestBaileysVersion } from "@al-e-dev/baileys"
+import baileys, { DisconnectReason, makeInMemoryStore, useMultiFileAuthState, generateWAMessageFromContent, makeCacheableSignalKeyStore, delay, Browsers, fetchLatestBaileysVersion } from "@nazi-team/baileys"
 import pino from "pino"
 import readline from "readline"
 import { exec } from "child_process"

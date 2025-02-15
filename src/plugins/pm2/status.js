@@ -1,4 +1,4 @@
-import { convertTimeOut } from "@al-e-dev/baileys";
+import { convertTimeOut } from "@nazi-team/baileys";
 import { exec } from "child_process";
 
 export default {
