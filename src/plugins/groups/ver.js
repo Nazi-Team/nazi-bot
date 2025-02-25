@@ -1,6 +1,5 @@
 export default {
     name: 'ver',
-    params: [],
     description: 'Reenvía el contenido multimedia citado',
     comand: ['ver'],
     isQuoted: true,

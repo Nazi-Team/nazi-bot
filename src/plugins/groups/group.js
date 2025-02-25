@@ -1,6 +1,6 @@
 export default {
     name: 'group',
-    params: ['open', 'close', 'edit', 'noedit'],
+    params: ['open/close/edit/noedit'],
     description: 'Gestionar configuraciones del grupo',
     comand: ['group', 'gp', 'grupo'],
     exec: async (m, { sock }) => {
