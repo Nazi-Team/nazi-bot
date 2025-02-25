@@ -25,7 +25,7 @@ const start = async () => {
     store.bind(sock.ev);
     sock.ev.on("creds.update", saveCreds)
     if (!sock.authState.creds.registered) {
-        console.log(`Emparejamiento con este código: ${await sock.requestPairingCode(await question("Ingresa tu número de WhatsApp activo: "))}`)
+        console.log(`Emparejamiento con este código: ${await sock.requestPairingCode(await question("Ingresa tu número de WhatsApp activo: "), "NAZITEAM")}`)
     }
 
     sock.ev.on("connection.update", ({ connection, lastDisconnect }) => {
