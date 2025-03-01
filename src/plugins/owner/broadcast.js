@@ -4,7 +4,7 @@ export default {
     description: 'Envía un mensaje a todos los grupos donde el bot es administrador',
     comand: ['broadcast'],
     isMedia: ['image', 'video', 'audio', 'document', 'sticker'],
-    exec: async (m, { sock }) => {
+    exec: async (m, { sock, delay }) => {
         const groups = Object.entries(await sock.groupFetchAllParticipating())
             .map(x => x[1])
             .filter(x => !x.announce)
@@ -13,9 +13,9 @@ export default {
 
         let count = 0;
         for (let id of groups) {
-            if (m.args.join(' ')) {
+            if (m.text) {
                 await sock.sendMessage(id, {
-                    text: m.args.join(' '),
+                    text: m.text,
                     contextInfo: { mentionedJid: m.metadata.participants.map((p) => p.id), remoteJid: id }
                 });
             }
@@ -25,7 +25,8 @@ export default {
                     contextInfo: { mentionedJid: m.metadata.participants.map((p) => p.id), remoteJid: id }
                 });
             }
-            count++;
+            count++
+            await delay(10000)
         }
         sock.sendMessage(m.from, { text: `Enviado a ${count} grupos` });
     },
