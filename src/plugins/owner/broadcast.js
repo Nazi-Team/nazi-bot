@@ -1,9 +1,8 @@
 export default {
     name: 'broadcast',
-    params: ['message'],
     description: 'Envía un mensaje a todos los grupos donde el bot es administrador',
     comand: ['broadcast'],
-    isMedia: ['image', 'video', 'audio', 'document', 'sticker'],
+    isQuoted: true,
     exec: async (m, { sock, delay }) => {
         const groups = Object.entries(await sock.groupFetchAllParticipating())
             .map(x => x[1])
